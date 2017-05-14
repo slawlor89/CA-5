@@ -7,3 +7,28 @@
 # functions;
 # XXXXXX
 
+# Create the addition function
+addition <- function(x,y) {
+  return(x+y)
+}
+
+# Create the subtraction function
+subtraction <- function(x,y) {
+  return(x-y)
+}
+
+# Create the multiplication function
+multiplication <- function(x,y) {
+  return(x*y)
+}
+
+# Create the division function
+division <- function(x,y) {
+  return(x/y)
+}
+
+# Create the exponent function
+exponential <- function(x,y) {
+  return(x^y)
+}
+
