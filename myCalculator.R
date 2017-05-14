@@ -58,7 +58,42 @@ factorialfunction <- function(x) {
   return(factorial(x))
 }
 
+# Display the options to the user
+print("Welcome to my Calculator. Please choose one of the following options by typing the choice number;")
+print("Addition > 1")
+print("Subtraction > 2")
+print("Multiplication > 3")
+print("Division > 4")
+print("Exponent > 5")
+print("Square Root > 6")
+print("Cos > 7")
+print("Sin > 8")
+print("Log > 9")
+print("Factorial > 10")
 
+# Allow the user to choose a function
+choice = as.integer(readline(prompt = "Please make your choice..."))
+
+# First number is always to be requested from the user, regardless of what function is selected
+num1 = as.integer(readline(prompt = "Please enter the first number: "))
+
+# Second number is only requested from the user if the function requires it
+if(choice < 6) {
+num2 = as.integer(readline(prompt = "Please enter the second number: "))
+}
+
+operator <- switch(choice,"+","-","*","/","^","sqrt","cos", "sin","log","factorial")
+result <- switch(choice, addition(num1, num2), subtraction(num1, num2), multiplication(num1, num2), division(num1, num2), exponential(num1, num2), sqroot(num1), cosfunction(num1), sinfunction(num1), logfunction(num1), factorialfunction(num1))
+
+# Set up the print statement for functions which take two numbers
+if(choice < 6) {
+print(paste(num1, operator, num2, "=", result))
+}
+
+# Set up the print statement for functions which only take one number
+if(choice >= 6) {
+  print(paste(operator, num1, "=", result))
+}
 
 # The following are tests to confirm that the calculator works as expected
 print("The following are confirmations that the functions work correctly...")
